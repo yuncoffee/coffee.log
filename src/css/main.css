@@ -1,5 +1,12 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 html {
   font-size: 10px;
+}
+
+body {
+  height: 100vh;
+  font-family: pretendard;
+  background: yellowgreen;
 }
 
 h1 {
@@ -8,4 +15,145 @@ h1 {
 
 h2 {
   font-size: 32px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h5 {
+  font-size: 1.4rem;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+h6, .container-selectBox .selectBox .input-selectBox, .container-selectBox .optionBox .optionList li[class^="optionItem"], .container-radioBox label {
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+.container {
+  margin-top: 10em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 44px;
+  background: #fff;
+}
+
+.container-selectBox {
+  margin-left: 16px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.container-selectBox .selectBox .input-selectBox {
+  min-width: 80px;
+  width: 163px;
+  color: #626262;
+  border: none;
+  background: #ebebeb;
+  padding: 0.41667em 0.66667em;
+  border-radius: 4px;
+}
+
+.container-selectBox .optionBox.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-selectBox .optionBox {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  border-radius: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.container-selectBox .optionBox .optionList {
+  width: calc(100% - 2px);
+  padding: 1px 0;
+}
+
+.container-selectBox .optionBox .optionList li[class^="optionItem"] {
+  padding: 0.41667em;
+  text-align: center;
+  color: #fff;
+  border-radius: 7px;
+}
+
+.container-selectBox .optionBox .optionList li[class^="optionItem"]:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.container-selectBox .selectBox .select-card {
+  width: 300px;
+}
+
+.container-radioBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container-radioBox input[type="radio"] {
+  display: none;
+}
+
+.container-radioBox label {
+  margin-left: 32px;
+  padding: 7px 0;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  color: #efefef;
+}
+
+.container-radioBox label:before {
+  position: absolute;
+  left: -32px;
+  content: "";
+  width: 28px;
+  height: 28px;
+  background: #ebebeb;
+  border-radius: 50%;
+}
+
+.container-radioBox input[type="radio"]:checked + label {
+  color: #333333;
+}
+
+.container-radioBox input[type="radio"]:checked + label:after {
+  left: -27px;
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #206fd6;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 6px 1px rgba(32, 111, 214, 0.3);
+          box-shadow: 1px 1px 6px 1px rgba(32, 111, 214, 0.3);
 }

@@ -1,4 +1,9 @@
+import "./css/reset.css"
 import "./css/main.css"
-import { element } from "./js/element" //element 조작
+import { selectBoxEvent } from "./js/element" //element 조작
 
-element()
+window.onload = () => {
+    selectBoxEvent()
+}
+
+console.log("hi")
