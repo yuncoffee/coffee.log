@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+.container-selectBox {
+    margin-left: 16px;
+    width: fit-content;
+    .selectBox {
+        .input-selectBox {
+            min-width: 80px;
+            width: 163px;
+            color: #626262;
+            @extend h6;
+            border: none;
+            background: #ebebeb;
+            padding: 0.41667em 0.66667em;
+            border-radius: 4px;
+        }
+    }
+    .optionBox.active {
+        display: flex;
+    }
+
+    .optionBox {
+        position: absolute;
+        background: rgba($color: #000000, $alpha: 0.2);
+        backdrop-filter: blur(30px);
+        border-radius: 8px;
+
+        align-items: center;
+        display: none;
+
+        .optionList {
+            width: calc(100% - 2px);
+            padding: 1px 0;
+            li[class^="optionItem"] {
+                @extend h6;
+                padding: 0.41667em;
+                text-align: center;
+                color: #fff;
+                border-radius: 7px;
+            }
+            li[class^="optionItem"]:hover {
+                background: rgba($color: #000000, $alpha: 0.15);
+            }
+        }
+    }
+}
+
+.container-selectBox {
+    .selectBox {
+        .select-card {
+            width: 300px;
+        }
+    }
+}
+
+.container-radioBox {
+    // margin: 30em 20em;
+    display: flex;
+    flex-direction: column;
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    label {
+        margin-left: 32px;
+        padding: 7px 0;
+        position: relative;
+        @extend h6;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        justify-content: start;
+        color: #efefef;
+        // padding-left: 120px;
+    }
+
+    label:before {
+        position: absolute;
+        left: -32px;
+        content: "";
+        width: 28px;
+        height: 28px;
+        background: #ebebeb;
+        border-radius: 50%;
+    }
+
+    input[type="radio"]:checked + label {
+        color: #333333;
+    }
+
+    input[type="radio"]:checked + label:after {
+        left: -27px;
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: #206fd6;
+        border-radius: 50%;
+        box-shadow: 1px 1px 6px 1px rgba(32, 111, 214, 0.3);
+    }
+}
