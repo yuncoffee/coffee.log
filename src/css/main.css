@@ -341,7 +341,7 @@ a:hover {
 
 .project .space-img {
   background: rgba(235, 235, 235, 0.75);
-  --smooth-corners: 10;
+  --smooth-corners: 14;
 }
 
 .project .space-img .thumbnail {
