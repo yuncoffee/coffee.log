@@ -8,6 +8,7 @@ export function selectBoxEvent() {
     let elemSelectBoxOffsetLeft = 0
     let elemOptionItem = 0
     let elemInputSelectBox = 0
+    let body = 0
 
     let arr = []
 
@@ -20,10 +21,10 @@ export function selectBoxEvent() {
             elemOptionItem = document.querySelectorAll(`.optionBox-${i} li`)
             elemInputSelectBox = eleminputSelectBoxList[i]
             elemInputSelectBox.innerHTML = elemOptionItem[0].innerHTML
-            console.log(elemInputSelectBox)
+            body = document.querySelector("body")
+            body.setAttribute("data-select", false)
         }
     }
-
     function clickSelect() {
         for (let i = 0; i < elemSelectBoxList.length; i++) {
             let elemSelectBox = elemSelectBoxList[i]
@@ -35,20 +36,28 @@ export function selectBoxEvent() {
                     elemInputSelectBox.innerHTML = o.innerHTML
                 })
             })
-            elemSelectBox.addEventListener("click", () => {
-                console.log(elemSelectBox.getBoundingClientRect())
+            elemSelectBox.addEventListener("click", (e) => {
+                elemOptionBox.classList.add("active")
+                // e.preventDefault()
+                // e.stopPropagation()
+                body.dataset.select = true
+                console.log(body.dataset.select)
+
+                console.log(e.target)
+                console.log(elemOptionItem[0])
+                if (e.target == elemOptionItem[0]) {
+                    console.log("정상적으로 클릭됨")
+                    elemOptionBox.classList.remove("active")
+                }
+
                 elemSelectBoxOffsetTop = elemSelectBox.offsetTop
                 elemSelectBoxOffsetWidth = elemSelectBox.offsetWidth
                 elemSelectBoxOffsetHeight = elemSelectBox.offsetHeight
                 elemSelectBoxOffsetLeft = elemSelectBox.offsetLeft
-                console.log(elemSelectBoxOffsetWidth)
-                console.log(elemSelectBoxOffsetHeight)
                 elemOptionBox.style.top = `${
                     elemSelectBoxOffsetTop + elemSelectBoxOffsetHeight + 2
                 }px`
                 elemOptionBox.style.width = `${elemSelectBoxOffsetWidth}px`
-
-                elemOptionBox.classList.toggle("active")
             })
         }
     }

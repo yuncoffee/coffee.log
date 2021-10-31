@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+@mixin font($size: 1.6rem, $height: 1.5em, $weight: 500, $spacing: 0) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+    letter-spacing: $spacing;
+}
+
+// text overflow ... 처리
+@mixin ellipsis-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+}
+
+// margin 처리
+@mixin margin($var...) {
+    margin: $var;
+}
+
+// padding 처리
+@mixin padding($var...) {
+    padding: $var;
+}
+
+@mixin btn() {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+}
+
+@mixin colors($bgColor: null, $fontColor: null) {
+    background-color: $bgColor;
+    color: $fontColor;
+}
+
+@mixin absoluteCenter($t: 50%, $l: 50%, $x: -50%, $y: -50%) {
+    top: $t;
+    left: $l;
+    transform: translate($x, $y);
+}

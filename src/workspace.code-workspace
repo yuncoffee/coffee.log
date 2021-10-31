@@ -1,0 +1,13 @@
+{
+    "folders": [
+		{
+			"name": "coffee.log",
+			"path": ".."
+		},
+		{
+			"name": "node_modules",
+			"path": "../../myPortfolio/webpack-basic/node_modules"
+		}
+	],
+    "settings": {}
+}
